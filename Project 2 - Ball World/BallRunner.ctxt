@@ -6,7 +6,7 @@ comment1.target=void\ main()
 comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
 comment2.params=x
 comment2.target=void\ run(BallBot[])
-comment2.text=\r\n\ \ \ \ public\ static\ void\ activity1(){\r\n\ \ \ \ \ \ \ \ BallWorld\ ballWorld\ \=\ new\ BallWorld(400,\ 100);\r\n\ \ \ \ \ \ \ \ TGPoint\ startpoint\ \=\ new\ TGPoint(0,0);\r\n\ \ \ \ \ \ \ \ BallBot\ ballBot\ \=\ new\ BallBot(ballWorld,\ startpoint,\ 180,\ 20);\r\n\ \ \ \ \ \ \ \ int\ i\ \=\ 0;\r\n\ \ \ \ \ \ \ \ while(i\ <\ 1)\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(ballBot.canMoveForward(ballWorld)\ \=\=\ true){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballBot.moveForward();\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\ else{\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballBot.setHeading((ballBot.getHeading()\ +\ Math.random()\ *\ 1000)\ %\ 360);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ }\r\n
+comment2.text=\r\n\ \ \ \ public\ static\ void\ activity1(){\r\n\ \ \ \ BallWorld\ ballWorld\ \=\ new\ BallWorld(400,\ 100);\r\n\ \ \ \ TGPoint\ startpoint\ \=\ new\ TGPoint(0,0);\r\n\ \ \ \ BallBot\ ballBot\ \=\ new\ BallBot(ballWorld,\ startpoint,\ 180,\ 20);\r\n\ \ \ \ int\ i\ \=\ 0;\r\n\ \ \ \ while(i\ <\ 1)\ {\r\n\ \ \ \ if(ballBot.canMoveForward(ballWorld)\ \=\=\ true){\r\n\ \ \ \ ballBot.moveForward();\r\n\ \ \ \ }\ else{\r\n\ \ \ \ ballBot.setHeading((ballBot.getHeading()\ +\ Math.random()\ *\ 1000)\ %\ 360);\r\n\ \ \ \ }\r\n\ \ \ \ }\r\n\ \ \ \ }\r\n
 comment3.params=x
 comment3.target=int\ findFreeBallBotIndex(BallBot[])
 numComments=4
