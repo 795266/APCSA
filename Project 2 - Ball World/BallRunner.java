@@ -26,8 +26,12 @@ public class BallRunner
         TGPoint entrancepoint = new TGPoint(0,0);
         BallBot[] ballBotArray = new BallBot[10];
         BallRunner ballRunner = new BallRunner();
-
-        findFreeBallBotIndex(ballBotArray[]);
+        int i = 0;
+        while(i < 1) {
+            int freeBallBotIndex;
+            freeBallBotIndex = ballRunner.findFreeBallBotIndex(ballBotArray);
+        }
+        
     }
 
     /**
@@ -45,11 +49,12 @@ public class BallRunner
             }
     }
      */
-    public static void run(Ballbot[] x) {
+    public static void run(BallBot[] x) {
 
     }
+    
     public int findFreeBallBotIndex(BallBot[] x) {
-        for(int i = 0; i < x.length(); i = i = 1) {
+        for(int i = 0; i < x.length; i = i = 1) {
             if(x[i] == null) {
                 return i;
             }
