@@ -50,13 +50,10 @@ public class BallRunner
     }
     }
      */
-    public static void run(BallBot[] x) {
 
-    }
-
-    public int findFreeBallBotIndex(BallBot[] x) {
-        for(int i = 0; i < x.length; i = i + 1) {
-            if(x[i] == null) {
+    public int findFreeBallBotIndex(BallBot[] array) {
+        for(int i = 0; i < array.length; i = i + 1) {
+            if(array[i] == null) {
                 return i;
             }
         }
@@ -79,4 +76,27 @@ public class BallRunner
             }
         return ableToForm;
     }
+    ///** 
+    public BallBot ballBotToBounceOff(BallBot ballBot, BallBot[] array) {
+        TGPoint firstPoint = ballBot.getPoint();
+        TGPoint nextPoint = ballBot.forwardPoint();
+        for(int i = 0; i < array.length; i = i + 1) {
+            BallBot otherBallBot = array[i];
+            if (otherBallBot != null && otherBallBot != ballbot) {
+                int currentDistance = distanceBetweenPoints(firstpoint, array[i].getPoint);
+                if(currentDistance <= (ballBot.getRadius() + otherBallBot.getRadius())) {            
+                    boolean c1 = true;
+                }
+                int nextDistance = distanceBetweenPoints(nextpoint, array[i].getpoint);
+                if(nextDistance <= (ballBot.getRadius() + otherBallBot.getRadius())) {            
+                    boolean c2 = true;
+                }
+            }
+            if (c1 == true && c2 = true) { //FINISH THIS
+                
+            }
+        }
+    }
+    // */
+    
 }
