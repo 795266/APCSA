@@ -81,19 +81,21 @@ public class BallRunner
         TGPoint firstPoint = ballBot.getPoint();
         TGPoint nextPoint = ballBot.forwardPoint();
         for(int i = 0; i < array.length; i = i + 1) {
+            boolean c1 = false;
+            boolean c2 = false;
             BallBot otherBallBot = array[i];
             if (otherBallBot != null && otherBallBot != ballbot) {
                 int currentDistance = distanceBetweenPoints(firstpoint, array[i].getPoint);
                 if(currentDistance <= (ballBot.getRadius() + otherBallBot.getRadius())) {            
-                    boolean c1 = true;
+                    c1 = true;
                 }
                 int nextDistance = distanceBetweenPoints(nextpoint, array[i].getpoint);
                 if(nextDistance <= (ballBot.getRadius() + otherBallBot.getRadius())) {            
-                    boolean c2 = true;
+                    c2 = true;
                 }
             }
             if (c1 == true && c2 = true) { //FINISH THIS
-                
+                return 
             }
         }
     }
