@@ -24,7 +24,7 @@ public class BallRunner
             }
             for(int index = 0; index < ballBotArray.length; index++) {
                 if (ballBotArray[index] != null) {
-                    if(ballBotArray[index].canMoveForward(ballWorld) == true){
+                    if(ballBotArray[index].canMoveForward(ballWorld) == true && ballRunner.ballBotToBounceOff(ballBotArray[index], ballBotArray) == null){
                         ballBotArray[index].moveForward();
                     } else {
                         ballBotArray[index].setHeading((Math.random() * 360));
@@ -57,7 +57,7 @@ public class BallRunner
                 return i;
             }
         }
-        return x.length;
+        return array.length;
     }
     
     public double distanceBetweenPoints(TGPoint point1, TGPoint point2) {
@@ -80,25 +80,26 @@ public class BallRunner
     public BallBot ballBotToBounceOff(BallBot ballBot, BallBot[] array) {
         TGPoint firstPoint = ballBot.getPoint();
         TGPoint nextPoint = ballBot.forwardPoint();
+        boolean returned = false;
         for(int i = 0; i < array.length; i = i + 1) {
             boolean c1 = false;
             boolean c2 = false;
             BallBot otherBallBot = array[i];
-            if (otherBallBot != null && otherBallBot != ballbot) {
-                int currentDistance = distanceBetweenPoints(firstpoint, array[i].getPoint);
+            if (otherBallBot != null && otherBallBot != ballBot) {
+                double currentDistance = distanceBetweenPoints(firstPoint, array[i].getPoint());
                 if(currentDistance <= (ballBot.getRadius() + otherBallBot.getRadius())) {            
                     c1 = true;
                 }
-                int nextDistance = distanceBetweenPoints(nextpoint, array[i].getpoint);
+                double nextDistance = distanceBetweenPoints(nextPoint, array[i].getPoint());
                 if(nextDistance <= (ballBot.getRadius() + otherBallBot.getRadius())) {            
                     c2 = true;
                 }
             }
-            if (c1 == true && c2 = true) { //FINISH THIS
-                return 
+            if (c1 == true && c2 == true) { //FINISH THIS
+                returned = true;
+                return otherBallBot;
             }
         }
+        return null;
     }
-    // */
-    
 }
