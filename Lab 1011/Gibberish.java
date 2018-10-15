@@ -1,17 +1,6 @@
-
-/**
- * Write a description of class Gibberish here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class Gibberish
 {
-    // instance variables - replace the example below with your own
-    private String sourceString;
-    /**
-     * Constructor for objects of class Gibberish
-     */
+    String sourceString = "";
     public Gibberish()
     {
         Template template = new Template();
@@ -22,13 +11,21 @@ public class Gibberish
         String resultString = "";
         int currentSourceIndex = 0;
         while(currentSourceIndex < sourceString.length()) {
-            int nextRight = sourceString.indexOf("<");
-            if (nextRight == -1) {
-                resultString = resultString + sourceString.substring(0, nextRight);
+
+            if ((sourceString.substring(currentSourceIndex)).indexOf("<") == -1) {
+                resultString = resultString + sourceString.substring(currentSourceIndex);
                 currentSourceIndex = sourceString.length();
             } else {
-                int nextLeft = sourceString.indexOf(">");
+                int nextRight = sourceString.indexOf("<", currentSourceIndex) + 1;
+                int nextLeft = sourceString.indexOf(">", currentSourceIndex);
+                String placeHolderString = sourceString.substring(nextRight, nextLeft);
+                String replacementString = wordList5000.getRandomWordString(placeHolderString);
+                if (replacementString != null) {
+                    resultString = resultString + sourceString.substring(currentSourceIndex, nextRight - 2) + " " + replacementString;
+                }
+                currentSourceIndex = sourceString.indexOf("</>", currentSourceIndex) + 3;
             }
         }
+        return resultString;
     }
 }
