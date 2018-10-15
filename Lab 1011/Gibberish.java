@@ -1,9 +1,9 @@
 public class Gibberish
 {
-    String sourceString = "";
+    String sourceString = ""; //creates empty string to add the new parts of string to
     public Gibberish()
     {
-        Template template = new Template();
+        Template template = new Template(); //creates the crazy string
         sourceString = template.getSourceString();
     }
     
