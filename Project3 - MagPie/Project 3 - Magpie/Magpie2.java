@@ -12,6 +12,8 @@
  */
 public class Magpie2
 {
+    private String[] defaultResponses = new String[10];
+    
     /**
      * Get a default greeting   
      * @return a greeting
@@ -19,6 +21,19 @@ public class Magpie2
     public String getGreeting()
     {
         return "Hello, let's talk.";
+    }
+    
+    public Magpie2 () {
+        defaultResponses[0] = "That's crazy";
+        defaultResponses[1] = "Wonderful";
+        defaultResponses[2] = "Ouch";
+        defaultResponses[3] = "Oof";
+        defaultResponses[4] = "Do you want a hug";
+        defaultResponses[5] = "I'm hungry";
+        defaultResponses[6] = "15 minutes can save you 15 percent or more on car insurance";
+        defaultResponses[7] = "Hmmm";
+        defaultResponses[8] = "Do you really think so";
+        defaultResponses[9] = "I feel sick";
     }
     
     /**
@@ -65,37 +80,10 @@ public class Magpie2
      */
     private String getRandomResponse()
     {
-        final int NUMBER_OF_RESPONSES = 6;
+        final int NUMBER_OF_RESPONSES = 10;
         double r = Math.random();
         int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
-        String response = "";
-        
-        if (whichResponse == 0)
-        {
-            response = "Interesting, tell me more.";
-        }
-        else if (whichResponse == 1)
-        {
-            response = "Hmmm.";
-        }
-        else if (whichResponse == 2)
-        {
-            response = "Do you really think so?";
-        }
-        else if (whichResponse == 3)
-        {
-            response = "You don't say.";
-        }
-        else if (whichResponse == 4)
-        {
-            response = "That's crazy.";
-        }
-        else if (whichResponse == 5)
-        {
-            response = "I feel sick.";
-        }
-
-        return response;
+        return defaultResponses[whichResponse];
     }
     
     private int findKeyword(String statement, String goal, int startPos){
