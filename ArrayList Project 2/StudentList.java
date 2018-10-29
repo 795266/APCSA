@@ -25,15 +25,17 @@ public class StudentList
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public String getGreeting()
-    {
-        // put your code here
-        return "You have entered the teach portal";
-    }
+    
 
-    public String getResponse(String x)
+    public String addStudentToList(StudentList x)
     {
         // put your code here
-        return "x + asdfghjkl";
+        
+        
+    }
+    
+    public String printAll(StudentList x) {
+        System.out.println(x);
+        return "asrfg";
     }
 }
