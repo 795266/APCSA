@@ -93,13 +93,16 @@ public class StudentListRunner
         if(statement.indexOf("1") != -1 || statement.indexOf("2") != -1 || statement.indexOf("3") != -1 || statement.indexOf("4") != -1 || statement.indexOf("5") != -1 
         || statement.indexOf("6") != -1 || statement.indexOf("7") != -1 ||statement.indexOf("8") != -1 ||statement.indexOf("9") != -1 || statement.indexOf("0") != -1 ) {
             if (statement.indexOf(".") != -1) {
-                double given = in.nextLine();
+                double given = in.nextDouble();
+                return given;
             } else {
-                int given = in.nextLine();
+                int given = in.nextLine(); //use other methods for int and double
+                return given;
             }
         } else {
             String given = in.nextLine();
+            return given;
         }
-        return given;
+        
     }
 }
