@@ -27,11 +27,10 @@ public class StudentList
      */
     
 
-    public String addStudentToList(StudentList x)
+    public String addStudentToList(StudentList x, String first, String middle, String last, int number, double gpa)
     {
-        // put your code here
-        
-        
+        Student stu = new Student(first, middle, last, number, gpa);
+        x.add(stu);
     }
     
     public String printAll(StudentList x) {
