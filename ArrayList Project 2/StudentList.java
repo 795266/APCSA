@@ -1,4 +1,5 @@
-
+import java.util.Scanner;
+import java.util.ArrayList;
 /**
  * Write a description of class StudList here.
  *
@@ -7,18 +8,19 @@
  */
 public class StudentList
 {
-    public StudentList(StudentList x, String first, String middle, String last, int number, double gpa)
+    ArrayList<Student> arrayList;
+    public StudentList()
     {
-        // initialise instance variables
-        x = 0;
+        arrayList = new ArrayList<Student> ();
     }
 
-    public void addStudentToList(StudentList[] x, Student y){
-         x.add(y);
+    public void addStudentToList(Student y){
+         arrayList.add(y);
     }
     
-    public String printAll(StudentList x) {
-        System.out.println(x);
-        return "asrfg";
+    public void printAll() {
+        for(int i = 0; i < arrayList.size(); i = i + 1) {
+            System.out.print(arrayList.get(i));
+        }
     }
 }
