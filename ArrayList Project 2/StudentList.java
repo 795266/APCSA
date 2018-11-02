@@ -7,30 +7,14 @@
  */
 public class StudentList
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class StudList
-     */
-    public StudentList()
+    public StudentList(StudentList x, String first, String middle, String last, int number, double gpa)
     {
         // initialise instance variables
         x = 0;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    
-
-    public String addStudentToList(StudentList x, String first, String middle, String last, int number, double gpa)
-    {
-        Student stu = new Student(first, middle, last, number, gpa);
-        x.add(stu);
+    public void addStudentToList(StudentList[] x, Student y){
+         x.add(y);
     }
     
     public String printAll(StudentList x) {

@@ -18,10 +18,6 @@ public class Student
      */
     public Student(String first, String middle, String last, int number, double gpa)
     {
-        firstName = first;
-        middleName = middle; 
-        lastName = last;
-        stuNumber = number;
-        gpa = gpa;
+        Student stu = new Student(first, middle, last, number, gpa);
     }
 }

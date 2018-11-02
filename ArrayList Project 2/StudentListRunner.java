@@ -13,8 +13,8 @@ public class StudentListRunner
         System.out.println(getGreeting());
         Scanner in = new Scanner(System.in);
         String statement = in.nextLine();
-        double statementd = in.nextLine();
-        int statementi = in.nextLine();
+        double statementd = in.nextDouble();
+        int statementi = in.nextInt();
 
         while (!statement.equals("Terminate"))
         {
@@ -47,7 +47,8 @@ public class StudentListRunner
                     statement = in.nextLine();
                     double gpa = statementd;
                     
-                    studList.addStudentToList(studList, firstName, middleName, lastName, stuNumber, gpa);
+                    Student stu = new Student(firstName, middleName, lastName, stuNumber, gpa);
+                    studList.addStudentToList(studList, stu);
                     understood = true;
                 } else if (statement.equals("B")) {
                     //studList.deleteStudentFromList();
