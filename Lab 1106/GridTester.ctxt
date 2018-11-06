@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #BlueJ class context
 comment0.target=GridTester
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ GridTester\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
@@ -14,3 +15,21 @@ comment5.target=int\ numOfGreatest(int[][])
 comment6.params=x
 comment6.target=int\ findAverage(int[][])
 numComments=7
+=======
+#BlueJ class context
+comment0.target=GridTester
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ GridTester\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ main()
+comment2.params=
+comment2.target=int[][]\ loadArray()
+comment3.params=x
+comment3.target=int\ sumAll(int[][])
+comment4.params=x
+comment4.target=int\ findGreatest(int[][])
+comment5.params=x
+comment5.target=int\ numOfGreatest(int[][])
+comment6.params=x
+comment6.target=int\ findAverage(int[][])
+numComments=7
+>>>>>>> fae020947908380c48a16c48148a06da6b239491
