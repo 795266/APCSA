@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Student here.
+ * Write a description of class Student here. //Getters in this class
  *
  * @author (your name)
  * @version (a version number or a date)

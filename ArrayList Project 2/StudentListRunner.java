@@ -45,10 +45,11 @@ public class StudentListRunner
 
                 System.out.println("What is the id number of the student");
                 int stuNumber = in.nextInt();
-
+                statement = in.nextLine();
                 System.out.println("What is the gpa of the student");
                 double gpa = in.nextDouble();
-
+                statement = in.nextLine();
+                
                 Student stu = new Student(firstName, middleName, lastName, stuNumber, gpa);
                 studList.addStudentToList(stu);
                 understood = true;
