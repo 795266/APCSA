@@ -23,13 +23,16 @@ public class StudentListRunner
                 String middleName;
                 String lastName;
                 String name = "";
+                System.out.println("a " + name);
                 System.out.println("What is the name of the student");
                 statement = in.nextLine();
+                System.out.println("b " + name);       
                 if (statement.indexOf(",") == -1) {
                     name = statement;
                 } else {
                     name = statement.substring(statement.indexOf(",") + 2) + " " + statement.substring(0, statement.indexOf(","));
                 }
+                System.out.println("c " + name);
                 String firstName = name.substring(0, name.indexOf(" "));
                 if ((name.substring(name.indexOf(" ") + 1)).indexOf(" ") != -1) {
                     middleName = name.substring(name.indexOf(firstName) + firstName.length() + 1, name.substring(name.indexOf(firstName) + 1).indexOf(" "));
@@ -38,6 +41,7 @@ public class StudentListRunner
                     middleName = "";
                     lastName = name.substring(name.indexOf(firstName) + firstName.length() + 1);
                 }
+                System.out.println("d " + name);
 
                 System.out.println("What is the id number of the student");
                 int stuNumber = in.nextInt();

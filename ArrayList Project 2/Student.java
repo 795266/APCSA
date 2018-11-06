@@ -12,7 +12,6 @@ public class Student
     String lastName;
     int stuNumber;
     double gpa;
-
     /**
      * Constructor for objects of class Student
      */
