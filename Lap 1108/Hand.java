@@ -27,4 +27,20 @@ public class Hand
         }
         return x;
     }
+    
+    public int onePair() {
+        boolean x = true;
+        for(int i = 0; i < 5; i = i + 1) {
+            for(int j = 0; j < 4; j = j + 1) {
+                if((hand.get(i)).getCardSuit() == (hand.get(j)).getCardSuit()) {
+                    x = false;
+                }
+            }
+        }
+        if (x = true) {
+            return -1;
+        } else {
+            return x; //FINISH
+        }
+    }
 }
