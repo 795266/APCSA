@@ -20,7 +20,18 @@ public class StudentList
     
     public void printAll() {
         for(int i = 0; i < arrayList.size(); i = i + 1) {
-            System.out.print(arrayList.get(i));
+            System.out.println("Name: " + (arrayList.get(i)).getName());
+            System.out.println("Student Number: " + (arrayList.get(i)).getStuNumber());
+            System.out.println("GPA: " + (arrayList.get(i)).getGPA());
+            System.out.println("");
+        }
+    }
+    
+    public void deleteStudent(String f) {
+        for(int i = 0; i < arrayList.size(); i = i + 1) {
+            if(arrayList.get(i).substring(0, arrayList.get(i).getName().indexOf(" ")) == f) { //FINISH
+                arrayList.remove(arrayList.get(i));
+            }
         }
     }
 }

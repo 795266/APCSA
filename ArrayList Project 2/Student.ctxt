@@ -1,7 +1,13 @@
 #BlueJ class context
 comment0.target=Student
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Student\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Student\ here.\ //Getters\ in\ this\ class\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=first\ middle\ last\ number\ gpa
 comment1.target=Student(java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ double)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Student\r\n
-numComments=2
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment3.params=
+comment3.target=int\ getStuNumber()
+comment4.params=
+comment4.target=double\ getGPA()
+numComments=5

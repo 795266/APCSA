@@ -10,15 +10,11 @@ public class StudentListRunner
 {
     public static void main () {
         StudentList studList = new StudentList();
-
         System.out.println(getGreeting());
         Scanner in = new Scanner(System.in);
         String statement = getInput();
-
         while (!statement.equals("Terminate"))
         {
-            boolean understood = false;
-            //           while (understood == false) {
             if (statement.equals("A")) {
                 String middleName;
                 String lastName;
@@ -34,7 +30,7 @@ public class StudentListRunner
                 }
                 System.out.println("c " + name);
                 String firstName = name.substring(0, name.indexOf(" "));
-                if ((name.substring(name.indexOf(" ") + 1)).indexOf(" ") != -1) {
+                if ((name.substring(name.indexOf(" ") + 1)).indexOf(" ") == -1) {
                     middleName = name.substring(name.indexOf(firstName) + firstName.length() + 1, name.substring(name.indexOf(firstName) + 1).indexOf(" "));
                     lastName = name.substring(name.indexOf(middleName) + middleName.length() + 1);
                 } else {
@@ -52,27 +48,23 @@ public class StudentListRunner
                 
                 Student stu = new Student(firstName, middleName, lastName, stuNumber, gpa);
                 studList.addStudentToList(stu);
-                understood = true;
             } else if (statement.equals("B")) {
-                //studList.deleteStudentFromList();
-                understood = true;
+                System.out.println("What is the name of the student to be deleted?"); //finish
+                statement = in.nextLine();
+                String fName = statement.substring(0, statement.indexOf(" "));
+                studList.deleteStudent(fName);
             } else if (statement.equals("C")) {
                 //studList.editStudentList();
-                understood = true;
             } else if (statement.equals("D")) {
                 //studList.clearList();
-                understood = true;
             } else if (statement.equals("E")) {
                 System.out.println("got into");
                 studList.printAll();
-                understood = true;
             } else if (statement.equals("F")) {
                 //studList.printStudent();
-                understood = true;
             } else {
                 System.out.println("Not understood, please re-input");
                 statement = getInput();
-                understood = false;
             }
             //  }
             statement = getInput();

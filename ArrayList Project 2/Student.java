@@ -11,7 +11,7 @@ public class Student
     String middleName;
     String lastName;
     int stuNumber;
-    double gpa;
+    double GPA;
     /**
      * Constructor for objects of class Student
      */
@@ -21,6 +21,18 @@ public class Student
         middleName = middle;
         lastName = last;
         stuNumber = number;
-        gpa = gpa;
+        GPA = gpa;
+    }
+    
+    public String getName() {
+        return firstName + " " + middleName + " " + lastName;
+    }
+    
+    public int getStuNumber() {
+        return stuNumber;
+    }
+    
+    public double getGPA() {
+        return GPA;
     }
 }
