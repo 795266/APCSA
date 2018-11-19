@@ -58,6 +58,16 @@ public class IntArrayWorker
     return max;
   }
   
+  public int getColTotal(int x)
+  {
+    int total = 0;
+    for(int row = 0; row < matrix.length; row++)
+    {
+      total = matrix[row][x] + total;
+    }
+    return total;
+  }
+  
   /**
    * Method to return the total using a nested for-each loop
    * @return the total of the values in the array

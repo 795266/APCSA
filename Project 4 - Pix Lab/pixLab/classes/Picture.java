@@ -98,6 +98,71 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void onlyBlue()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(0);
+        pixelObj.setGreen(0);
+      }
+    }
+  }
+  
+  public void onlyRed()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setBlue(0);
+        pixelObj.setGreen(0);
+      }
+    }
+  }
+  
+  public void onlyGreen()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(0);
+        pixelObj.setBlue(0);
+      }
+    }
+  }
+  
+  public void negate() {
+      Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+          pixelObj.setRed(255 - pixelObj.getRed());
+          pixelObj.setBlue(255 - pixelObj.getBlue());
+          pixelObj.setGreen(255 - pixelObj.getGreen());
+          }
+        }
+    }
+    
+    public void grayscale() {
+      Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+          pixelObj.setRed((pixelObj.getRed() + pixelObj.getBlue() + pixelObj.getGreen())/3);
+          pixelObj.setBlue((pixelObj.getRed() + pixelObj.getBlue() + pixelObj.getGreen())/3);
+          pixelObj.setGreen((pixelObj.getRed() + pixelObj.getBlue() + pixelObj.getGreen())/3);
+          }
+        }
+    }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
@@ -227,6 +292,9 @@ public class Picture extends SimplePicture
     beach.explore();
     beach.zeroBlue();
     beach.explore();
+    beach.onlyBlue();
+    beach.explore();
+    
   }
   
 } // this } is the end of class Picture, put all new methods before this
