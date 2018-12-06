@@ -101,6 +101,14 @@ public class PictureTester
     temple.explore();
   }
   
+  public static void testMirrorArms()
+  {
+    Picture snowman = new Picture("snowman.jpg");
+    snowman.explore();
+    snowman.mirrorArms(snowman, 153, 100, 193, 170);
+    snowman.explore();
+  }
+  
   /** Method to test the collage method */
   public static void testCollage()
   {
