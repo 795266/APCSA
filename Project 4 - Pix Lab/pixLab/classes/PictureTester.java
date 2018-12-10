@@ -131,6 +131,8 @@ public class PictureTester
     p.explore();
     p.edgeDetection(10);
     p.explore();
+    p.edgeDetection2(10);
+    p.explore();
   }
   
   /** Main method for testing.  Every class can have a main

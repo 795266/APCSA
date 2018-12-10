@@ -385,11 +385,22 @@ public class Picture extends SimplePicture
                 leftPixel = pixels[row][col];
                 rightPixel = pixels[row][col+1];
                 rightColor = rightPixel.getColor();
+                int x = (int)(row / 100);
                 if (leftPixel.colorDistance(rightColor) > 
-                edgeDist)
-                    leftPixel.setColor(Color.BLACK);
-                else
-                    leftPixel.setColor(Color.WHITE);
+                edgeDist) {
+                    if (x == 0 || x == 3 || x == 6 || x == 9 || x == 12) {
+                        leftPixel.setColor(Color.ORANGE);
+                    }
+                     else if (x == 1 || x == 4 || x == 7 || x == 10 || x == 13) {
+                        leftPixel.setColor(Color.BLUE);
+                    }
+                     else {
+                        leftPixel.setColor(Color.RED);
+                    }
+                } else {
+                    leftPixel.setColor(Color.GRAY);
+                    
+                }
             }
         }
         for (int col = 0; col < pixels[0].length; col++)
@@ -400,9 +411,79 @@ public class Picture extends SimplePicture
                 topPixel = pixels[row][col];
                 bottomPixel = pixels[row + 1][col];
                 bottomColor = bottomPixel.getColor();
+                int x = (int)(row / 100);
                 if (topPixel.colorDistance(bottomColor) > 
                 edgeDist)
-                    topPixel.setColor(Color.BLACK);
+                    if (x == 0 || x == 3 || x == 6 || x == 9 || x == 12) {
+                        leftPixel.setColor(Color.ORANGE);
+                    }
+                     else if (x == 1 || x == 4 || x == 7 || x == 10 || x == 13) {
+                        leftPixel.setColor(Color.BLUE);
+                    }
+                     else {
+                        leftPixel.setColor(Color.RED);
+                    }
+                }
+            
+        }
+    }
+    
+    public void edgeDetection2(int edgeDist)
+    {
+        Pixel leftPixel = null;
+        Pixel rightPixel = null;
+        Pixel topPixel = null;
+        Pixel bottomPixel = null;
+        Pixel[][] pixels = this.getPixels2D();
+        Color rightColor = null;
+        Color bottomColor = null;
+        for (int row = 0; row < pixels.length; row++)
+        {
+            for (int col = 0; 
+            col < pixels[0].length-1; col++)
+            {
+                leftPixel = pixels[row][col];
+                rightPixel = pixels[row][col+1];
+                rightColor = rightPixel.getColor();
+                int x = (int)(Math.sqrt(row * row + col * col));
+                if (leftPixel.colorDistance(rightColor) > 
+                edgeDist) {
+                    if (x == 0 || x == 3 || x == 6 || x == 9 || x == 12) {
+                        leftPixel.setColor(Color.ORANGE);
+                    }
+                     else if (x == 1 || x == 4 || x == 7 || x == 10 || x == 13) {
+                        leftPixel.setColor(Color.BLUE);
+                    }
+                     else {
+                        leftPixel.setColor(Color.RED);
+                    }
+                } else {
+                    leftPixel.setColor(Color.GRAY);
+                    
+                }
+            }
+        }
+        for (int col = 0; col < pixels[0].length; col++)
+        {
+            for (int row = 0; 
+            row < pixels.length-1; row++)
+            {
+                topPixel = pixels[row][col];
+                bottomPixel = pixels[row + 1][col];
+                bottomColor = bottomPixel.getColor();
+                int x = (int)(Math.sqrt(row * row + col * col) / 100);
+                //System.out.println(x);
+                if (topPixel.colorDistance(bottomColor) > 
+                edgeDist)
+                    if (x == 0 || x == 3 || x == 6 || x == 9 || x == 12) {
+                        leftPixel.setColor(Color.ORANGE);
+                    }
+                     else if (x == 1 || x == 4 || x == 7 || x == 10 || x == 13) {
+                        leftPixel.setColor(Color.BLUE);
+                    }
+                     else {
+                        leftPixel.setColor(Color.RED);
+                    }
                 }
             
         }
