@@ -347,6 +347,23 @@ public class Picture extends SimplePicture
         this.mirrorVertical();
         this.write("collage.jpg");
     }
+    
+    public void createCollage2()
+    {
+        Picture robot = new Picture("robot.jpg");
+        Picture dove = new Picture("dove2.jpg");
+        Picture hawk = new Picture("hawk2.jpg");
+        this.copy(robot,0,0);
+        robot.negate();
+        this.copy(robot,100,0);
+        this.copy(hawk,200,0);
+        Picture robotNoBlue = new Picture(robot);
+        robotNoBlue.zeroBlue();
+        this.copy(robotNoBlue,300,0);
+        this.copy(hawk,400,0);
+        this.mirrorVertical();
+        this.write("collage.jpg");
+    }
 
     /** Method to show large changes in color 
      * @param edgeDist the distance for finding edges
@@ -355,8 +372,11 @@ public class Picture extends SimplePicture
     {
         Pixel leftPixel = null;
         Pixel rightPixel = null;
+        Pixel topPixel = null;
+        Pixel bottomPixel = null;
         Pixel[][] pixels = this.getPixels2D();
         Color rightColor = null;
+        Color bottomColor = null;
         for (int row = 0; row < pixels.length; row++)
         {
             for (int col = 0; 
@@ -372,6 +392,20 @@ public class Picture extends SimplePicture
                     leftPixel.setColor(Color.WHITE);
             }
         }
+        for (int col = 0; col < pixels[0].length; col++)
+        {
+            for (int row = 0; 
+            row < pixels.length-1; row++)
+            {
+                topPixel = pixels[row][col];
+                bottomPixel = pixels[row + 1][col];
+                bottomColor = bottomPixel.getColor();
+                if (topPixel.colorDistance(bottomColor) > 
+                edgeDist)
+                    topPixel.setColor(Color.BLACK);
+                }
+            
+        }
     }
 
     /* Main method for testing - each class in Java can have a main 
@@ -379,9 +413,9 @@ public class Picture extends SimplePicture
      */
     public static void main(String[] args) 
     {
-        Picture snowman = new Picture("snowman.jpg");
+        Picture snowman = new Picture("seagull.jpg");
         snowman.explore();
-        snowman.fishMoreVis();
+        //snowman.fishMoreVis();
         snowman.explore();
 
     }
