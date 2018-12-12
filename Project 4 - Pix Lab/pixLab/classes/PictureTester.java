@@ -62,7 +62,7 @@ public class PictureTester
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture("redMotorcycle.jpg");
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
@@ -70,7 +70,7 @@ public class PictureTester
   
   public static void testMirrorVerticalRightToLeft()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture("redMotorCycle.jpg");
     caterpillar.explore();
     caterpillar.mirrorVerticalRightToLeft();
     caterpillar.explore();
@@ -109,6 +109,14 @@ public class PictureTester
     snowman.explore();
   }
   
+  public static void testMirrorGull()
+  {
+    Picture snowman = new Picture("seagull.jpg");
+    snowman.explore();
+    snowman.mirrorGull(snowman, 234, 234, 325, 350);
+    snowman.explore();
+  }
+  
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -128,10 +136,12 @@ public class PictureTester
   public static void testEdgeDetection()
   {
     Picture p = new Picture("Nathan.jpg");
-    p.explore();
+    //p.explore();
     p.edgeDetection(10);
-    p.explore();
+    //p.explore();
     p.edgeDetection2(10);
+    //p.explore();
+    p.edgeDetection3(10);
     p.explore();
   }
   

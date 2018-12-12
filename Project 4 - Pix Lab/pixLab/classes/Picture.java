@@ -165,7 +165,7 @@ public class Picture extends SimplePicture
         }
     }
 
-    public void fishMoreVis() { //NEED TO FIX
+    public void fishMoreVis() {
         Pixel[][] pixels = this.getPixels2D();
         for (Pixel[] rowArray : pixels)
         {
@@ -331,6 +331,24 @@ public class Picture extends SimplePicture
         }
     }
 
+    public void mirrorGull(Picture fromPic, int startRow, int startCol, int endRow, int endCol) //234, 234, 325, 345
+    {
+        int mirrorPoint = endRow;
+        Pixel topPixel = null;
+        Pixel bottomPixel = null;
+        Pixel leftPixel = null;
+        Pixel rightPixel = null;
+        Pixel[][] pixels = this.getPixels2D();
+        for (int row = startRow; row < endRow + (endRow - startRow); row++){
+            for (int col = startCol; col < mirrorPoint; col++)
+            {
+                leftPixel = pixels[row][col];      
+                rightPixel = pixels[row][col - (endCol - startCol)];
+                rightPixel.setColor(leftPixel.getColor());
+            }
+        }
+    }
+    
     /** Method to create a collage of several pictures */
     public void createCollage()
     {
@@ -398,7 +416,9 @@ public class Picture extends SimplePicture
                         leftPixel.setColor(Color.RED);
                     }
                 } else {
-                    leftPixel.setColor(Color.GRAY);
+                    leftPixel.setBlue(255);
+                    leftPixel.setRed(255);
+                    leftPixel.setGreen(255);
                     
                 }
             }
@@ -458,7 +478,9 @@ public class Picture extends SimplePicture
                         leftPixel.setColor(Color.RED);
                     }
                 } else {
-                    leftPixel.setColor(Color.GRAY);
+                    leftPixel.setBlue(255);
+                    leftPixel.setRed(255);
+                    leftPixel.setGreen(255);
                     
                 }
             }
@@ -488,6 +510,68 @@ public class Picture extends SimplePicture
             
         }
     }
+    
+    public void edgeDetection3(int edgeDist)
+    {
+        Pixel leftPixel = null;
+        Pixel rightPixel = null;
+        Pixel topPixel = null;
+        Pixel bottomPixel = null;
+        Pixel[][] pixels = this.getPixels2D();
+        Color rightColor = null;
+        Color bottomColor = null;
+        for (int row = 0; row < pixels.length; row++)
+        {
+            for (int col = 0; 
+            col < pixels[0].length-1; col++)
+            {
+                leftPixel = pixels[row][col];
+                rightPixel = pixels[row][col+1];
+                rightColor = rightPixel.getColor();
+                int x = (int)(Math.sqrt(row * row + col * col) / 100);
+                if (leftPixel.colorDistance(rightColor) > 
+                edgeDist) {
+                    if (x == 0 || x == 3 || x == 6 || x == 9 || x == 12) {
+                        leftPixel.setColor(Color.ORANGE);
+                    }
+                     else if (x == 1 || x == 4 || x == 7 || x == 10 || x == 13) {
+                        leftPixel.setColor(Color.BLUE);
+                    }
+                     else {
+                        leftPixel.setColor(Color.RED);
+                    }
+                } else {
+                    leftPixel.setBlue(255);
+                    leftPixel.setRed(255);
+                    leftPixel.setGreen(255);
+                    
+                }
+            }
+        }
+        for (int col = 0; col < pixels[0].length; col++)
+        {
+            for (int row = 0; 
+            row < pixels.length-1; row++)
+            {
+                topPixel = pixels[row][col];
+                bottomPixel = pixels[row + 1][col];
+                bottomColor = bottomPixel.getColor();
+                int x = (int)(Math.sqrt(row * row + col * col) / 100);
+                //System.out.println(x);
+                if (topPixel.colorDistance(bottomColor) > 
+                edgeDist)
+                    if (x == 0 || x == 3 || x == 6 || x == 9 || x == 12) {
+                        leftPixel.setColor(Color.ORANGE);
+                    }
+                     else if (x == 1 || x == 4 || x == 7 || x == 10 || x == 13) {
+                        leftPixel.setColor(Color.BLUE);
+                    }
+                     else {
+                        leftPixel.setColor(Color.RED);
+                    }
+                }
+        }
+    }
 
     /* Main method for testing - each class in Java can have a main 
      * method 
@@ -497,7 +581,7 @@ public class Picture extends SimplePicture
         Picture snowman = new Picture("seagull.jpg");
         snowman.explore();
         //snowman.fishMoreVis();
-        snowman.explore();
+        //snowman.explore();
 
     }
 } // this } is the end of class Picture, put all new methods before this
