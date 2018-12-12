@@ -136,13 +136,14 @@ public class PictureTester
   public static void testEdgeDetection()
   {
     Picture p = new Picture("Nathan.jpg");
-    //p.explore();
+    p.explore();
     p.edgeDetection(10);
-    //p.explore();
+    p.explore();
     p.edgeDetection2(10);
-    //p.explore();
+    p.explore();
     p.edgeDetection3(10);
     p.explore();
+    p.write("NathanJavaPortrait.jpg");
   }
   
   /** Main method for testing.  Every class can have a main
